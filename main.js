@@ -32,6 +32,7 @@ const endPageButton = endPage.querySelector('.end-page__button');
 const endPageInput = endPage.querySelector('.end-page__input');
 const endPageLabel = endPage.querySelector('.end-page__label');
 const endPageText = endPage.querySelector('.end-page__text');
+const endPageTopText = endPage.querySelector('.end-page__top-text')
 
 const finalPageLose = document.querySelector('.final-page-lose');
 const finalPageLoseButton = finalPageLose.querySelector('.final-page-lose__button');
@@ -143,12 +144,12 @@ function startEraseGame() {
   });
 }
 startEraseGame();
-
+const cursor = document.querySelector(".fourth-page__cursor")
 const mouseMove = function (e) { // #2
   let x = e.clientX;
   let y = e.clientY;
-  document.querySelector('.fourth-page__cursor').style.left = x + "px";
-  document.querySelector('.fourth-page__cursor').style.top = y + "px";
+  cursor.style.left = x + "px";
+  cursor.style.top = y + "px";
 };
 
 document.addEventListener("mousemove", mouseMove);
@@ -391,7 +392,8 @@ endPageInput.addEventListener('focus', () => {
     endPageInput.style.transform = 'translateY(-120px)';
     endPageLabel.style.transform = 'translateY(-120px)';
     endPageButton.style.transform = 'translateY(-120px)';
-    endPageText.style.transform = 'translateY(-120px)'; 
+    endPageText.style.transform = 'translateY(-120px)';
+    endPageTopText.style.transform = 'translateY(-120px)';
   }
 });
 
@@ -401,6 +403,7 @@ endPageInput.addEventListener('blur', () => {
     endPageLabel.style.transform = 'translateY(0)';
     endPageText.style.transform = 'translateY(0)';
     endPageButton.style.transform = 'translateY(0)';
+    endPageTopText.style.transform = 'translateY(0)';
     window.scrollTo({top: 0, behavior: "smooth"});
   }
 });

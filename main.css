@@ -414,7 +414,7 @@ button:hover {
 .fourth-page__cursor {
   height: 40px;
   width: 40px;
-  z-index: 100;
+  z-index: 10000;
   pointer-events: none;
   position: absolute;
   box-sizing: border-box;
@@ -660,6 +660,7 @@ line-height: 24px; /* 109.091% */
   font-weight: 900;
   line-height: 21.482px; /* 107.409% */
   text-transform: uppercase;
+  transition: transform .3s ease-out;
 }
 
 .end-page__text {
