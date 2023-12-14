@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NAILS</title>
+  <link rel="stylesheet" href="./main.css">
+  <script defer src="mobile-detect.min.js"></script>
+  <script defer src="imask.js"></script>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+  <div class="first-page">
+    <div class="first-page__logos">
+      <img class="first-page__logo first-page__logo_mel" src="./images/mel.svg" alt="">
+      <img class="first-page__logo first-page__logo_cross" src="./images/cross.svg" alt="">
+      <img class="first-page__logo first-page__logo_mts" src="./images/mts.svg" alt="">
+    </div>
+    <p class="first-page__text">
+      обн<br>ови<br>ма<br>ник
+      <img class="first-page__help-img first-page__help-img_1" src="./images/first-help-1.png" alt="">
+      <img class="first-page__help-img first-page__help-img_2" src="./images/first-help-2.png" alt="">
+      <img class="first-page__help-img first-page__help-img_3" src="./images/first-help-3.png" alt="">
+      <img class="first-page__help-img first-page__help-img_4" src="./images/first-help-4.png" alt="">
+    </p>
+    <img class="first-page__button" src="./images/first-page-btn.png" alt="">
+  </div>
+  <div class="second-page second-page_disabled">
+    <img class="back-btn second-page__back" src="./images/back-btn.svg" alt="">
+    <p class="second-page__top-text">
+      обнови<br>маник
+    </p>
+    <div class="second-page__content blur-content">
+      <img class="blur-content__img" src="./images/content-img-1.png" alt="">
+      <p class="blur-content__text">
+        Стирай слой за&nbsp;слоем маникюр
+      </p>
+    </div>
+    <img class="second-page__button" src="./images/second-page-btn.png" alt="">
+  </div>
+  <div class="second-page-2 second-page-2_disabled">
+    <img class="back-btn second-page-2__back" src="./images/back-btn.svg" alt="">
+    <p class="second-page-2__top-text">
+      обнови<br>маник
+    </p>
+    <div class="second-page-2__content blur-content">
+      <img class="blur-content__img" src="./images/content-img-2.png" alt="">
+      <p class="blur-content__text">
+        Успеть стереть 5&nbsp;слоев за&nbsp;30&nbsp;секунд
+      </p>
+    </div>
+    <img class="second-page-2__button" src="./images/second-page-btn.png" alt="">
+  </div>
+  <div class="second-page-3 second-page-3_disabled">
+    <img class="back-btn second-page-3__back" src="./images/back-btn.svg" alt="">
+    <p class="second-page-3__top-text">
+      обнови<br>маник
+    </p>
+    <div class="second-page-3__content blur-content">
+      <img class="blur-content__img" src="./images/content-img-3.png" alt="">
+      <p class="blur-content__text">
+        Введи номер телефона для проверки подписки МТС Premium
+      </p>
+    </div>
+    <img class="second-page-3__button" src="./images/second-page-lastbtn.png" alt="">
+  </div>
+  <div class="third-page third-page_disabled">
+    <img class="third-page__check-mark" src="./images/third-page-V.svg" alt="check mark">
+    <p class="third-page__text">
+      Твой номер записан<br>
+      Ты можешь создать новое изображение
+    </p>
+    <button class="third-page__button button">
+      Приступить
+    </button>
+  </div>
+  <div class="fourth-page fourth-page_disabled">
+    <img class="fourth-page__cursor" src="./images/earaser.svg" alt="">
+    <div class="fourth-page__screen">
+      <p class="fourth-page__screen-text">
+        Стирай маникюр пока<br>время не остановилось 
+      </p>
+      <div class="fourth-page__screen-time-block">
+        <img class="fourth-page__screen-round" src="./images/time-round.svg" alt="">
+        <p id="basicUsage" class="fourth-page__screen-time-seconds">30</p>
+        <p class="fourth-page__screen-time-sec">sec</p>
+      </div>
+        <div id="elem">
+        </div>
+        <div id="elem2">
+        </div>
+        <div id="elem3">
+        </div>
+        <div id="elem4">
+        </div>
+        <div id="elem5">
+        </div>
+        <img id="hand" src="./images/hand.png" alt="">
+    </div>
+  </div>
+  <div class="info-page info-page_disabled">
+    <p class="info-page__text text">
+      Для принятия участия в&nbsp;розыгрыше и&nbsp;получения приза необходимо разрешить доступ к&nbsp;камере телефона
+    </p>
+    <button class="info-page__button button" type="button">
+      Понятно
+    </button>
+  </div>
+  <div class="final-page final-page_disabled">
+    <p class="final-page__top-text">
+      обнови<br>маник
+    </p>
+    <img class="back-btn final-page__back" src="./images/back-btn.svg" alt="">
+    <img class="final-page__img" src="./images/first-help-4.png" alt="">
+    <p class="final-page__text">
+      Твой номер записан!
+      Поздравляем, ты&nbsp;участвуешь в&nbsp;розыгрыше ✨
+    </p>
+    <img class="final-page__check" src="./images/check-arrow.svg" alt="">
+    <img class="final-page__button" src="./images/final-page-btn.png" alt="">
+  </div>
+  <div class="final-page-lose final-page-lose_disabled">
+    <p class="final-page-lose__top-text">
+      обнови<br>маник
+    </p>
+    <img class="final-page-lose__img" src="./images/first-help-3.png" alt="">
+    <p class="final-page-lose__text">
+      К&nbsp;сожалению, ты&nbsp;не&nbsp;успел стереть все слои маникюра :(
+    </p>
+    <img class="final-page-lose__check" src="./images/check-lose.svg" alt="">
+    <img class="final-page-lose__button" src="./images/page-lose-btn.png" alt="">
+  </div>
+  <div class="end-page end-page_disabled">
+    <p class="end-page__top-text">
+      обнови<br>маник
+    </p>
+    <p class="end-page__text">
+      Супер!<br>Тебе остался 1&nbsp;шаг для участия: оставь свой номер для проверки подписки МТС Premium
+    </p>
+    <p class="end-page__label">
+      Оставь свой номер для участия в конкурсе
+    </p>
+    <input class="end-page__input" type="tel" value="+7" name="phone number">
+    <button disabled class="end-page__button">
+      Проверить подписку МТС Premium
+      <img class="end-page__right-arrow" src="./images/right-arrow.svg" alt="right arrow">
+    </button>
+  </div>
+  <script src="jquery.min.js"></script>
+  <script src="wScratchPad.min.js"></script>
+  <script src="easytimer.min.js"></script>
+  <script src="./main.js" type="module"></script>
+</body>
+</html>
