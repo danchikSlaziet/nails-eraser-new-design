@@ -449,6 +449,10 @@ button:hover {
   position: relative;
 }
 
+.fourth-page__screen_active {
+  
+}
+
 .fourth-page__screen-text {
   position: absolute;
   top: 41px;
