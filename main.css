@@ -447,10 +447,11 @@ button:hover {
   background: rgba(255, 255, 255, 0.30);
   /* padding: 19px 24.7px 0 23.7px; */
   position: relative;
+  transition: border-color .2s linear;
 }
 
 .fourth-page__screen_active {
-  
+  border-color: coral;
 }
 
 .fourth-page__screen-text {

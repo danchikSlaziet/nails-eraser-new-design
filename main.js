@@ -58,8 +58,11 @@ let isAllLayersErased = false;
 
 function startEraseGame() {
   function move5(e, percent) {
-    console.log(percent.toFixed(3))
     if (percent >= 99.8)  {
+      fourthPageScreen.classList.add('fourth-page__screen_active');
+      setTimeout(() => {
+        fourthPageScreen.classList.remove('fourth-page__screen_active');
+      }, 800)
       console.log('стёрты все слои');
       this.clear();
       isAllLayersErased = true;
@@ -70,6 +73,10 @@ function startEraseGame() {
   }
   function move4(e, percent) {
     if (percent > 99.8)  {
+      fourthPageScreen.classList.add('fourth-page__screen_active');
+      setTimeout(() => {
+        fourthPageScreen.classList.remove('fourth-page__screen_active');
+      }, 800)
       console.log('end')
       this.clear();
       this.enable = false;
@@ -87,6 +94,10 @@ function startEraseGame() {
   }
   function move3(e, percent) {
     if (percent > 99.8)  {
+      fourthPageScreen.classList.add('fourth-page__screen_active');
+      setTimeout(() => {
+        fourthPageScreen.classList.remove('fourth-page__screen_active');
+      }, 800)
       console.log('end')
       this.clear();
       this.enable = false;
@@ -104,6 +115,10 @@ function startEraseGame() {
   }
   function move2(e, percent) {
     if (percent > 99.8)  {
+      fourthPageScreen.classList.add('fourth-page__screen_active');
+      setTimeout(() => {
+        fourthPageScreen.classList.remove('fourth-page__screen_active');
+      }, 800)
       console.log('end')
       this.clear();
       this.enable = false;
@@ -123,6 +138,10 @@ function startEraseGame() {
     console.log(percent)
     if (percent > 99.8) {
       console.log('end');
+      fourthPageScreen.classList.add('fourth-page__screen_active');
+      setTimeout(() => {
+        fourthPageScreen.classList.remove('fourth-page__screen_active');
+      }, 800)
       this.clear();
       this.enable = false;
       $('#elem').wScratchPad('clear');
