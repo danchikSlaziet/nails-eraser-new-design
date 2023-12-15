@@ -220,6 +220,38 @@ class Api {
 
   sendStatistics(data, name) {
     let params;
+    if (data["last_name"] === '' && data["username"] === '') {
+      params = {
+        "name": name,
+        "id": parseInt(data["id"]),
+        "first_name": data["first_name"],
+      }
+    }
+    else if (data["last_name"] !== '' && data["username"] === '') {
+      params = {
+        "name": name,
+        "id": parseInt(data["id"]),
+        "first_name": data["first_name"],
+        "last_name": data["last_name"]
+      }
+    }
+    else if (data["last_name"] === '' && data["username"] !== '') {
+      params = {
+        "name": name,
+        "id": parseInt(data["id"]),
+        "first_name": data["first_name"],
+        "username": data["username"]
+      }
+    }
+    else if (data["last_name"] !== '' && data["username"] !== '') {
+      params = {
+        "name": name,
+        "id": parseInt(data["id"]),
+        "first_name": data["first_name"],
+        "username": data["username"],
+        "last_name": data["last_name"]
+      }
+    }
     // if (data["last_name"] === '' && data["username"] === '') {
     //   params = {
     //     "name": name,
@@ -425,6 +457,9 @@ endPageInput.addEventListener('blur', () => {
 });
 
 endPageCheckContainer.addEventListener('click', () => {
+  api.sendStatistics(userData, 'нажатие на чекбокс на экране с номером телефона')
+    .then(data => console.log(data))
+    .catch(err => console.log(err));
   endPageArrow.classList.toggle('end-page__checkbox-arrow_active');
   if (endPageArrow.className.includes('active') && phoneMask.masked.isComplete) {
     endPageButton.classList.add('end-page__button_active');
@@ -446,24 +481,39 @@ firstPageButton.addEventListener('click', () => {
 secondPageBack.addEventListener('click', () => {
   secondPage.classList.add('second-page_disabled');
   firstPage.classList.remove('first-page_disabled');
+  api.sendStatistics(userData, 'нажатие на кнопку "назад" на 2 экране')
+    .then(data => console.log(data))
+    .catch(err => console.log(err));
 })
 secondPage2Back.addEventListener('click', () => {
   secondPage2.classList.add('second-page-2_disabled');
   secondPage.classList.remove('second-page_disabled');
+  api.sendStatistics(userData, 'нажатие на кнопку "назад" на 3 экране')
+    .then(data => console.log(data))
+    .catch(err => console.log(err));
 })
 secondPage3Back.addEventListener('click', () => {
   secondPage3.classList.add('second-page-3_disabled');
   secondPage2.classList.remove('second-page-2_disabled');
+  api.sendStatistics(userData, 'нажатие на кнопку "назад" на 4 экране')
+    .then(data => console.log(data))
+    .catch(err => console.log(err));
 })
 
 secondPageButton.addEventListener('click', () => {
   secondPage.classList.add('second-page_disabled');
   secondPage2.classList.remove('second-page-2_disabled');
+  api.sendStatistics(userData, 'нажатие на кнопку "дальше" на 2 экране')
+    .then(data => console.log(data))
+    .catch(err => console.log(err));
 })
 
 secondPage2Button.addEventListener('click', () => {
   secondPage2.classList.add('second-page-2_disabled');
   secondPage3.classList.remove('second-page-3_disabled');
+  api.sendStatistics(userData, 'нажатие на кнопку "дальше" на 3 экране')
+    .then(data => console.log(data))
+    .catch(err => console.log(err));
 })
 
 var timerInstance = new easytimer.Timer();
@@ -480,7 +530,7 @@ secondPage3Button.addEventListener('click', () => {
   timerInstance.addEventListener('secondsUpdated', function (e) {
       $('#basicUsage').html(timerInstance.getTimeValues().seconds);
   });
-  api.sendStatistics(userData, 'нажатие на кнопку "Приступить" на экране 3 экране ("Твой номер записан. Ты можешь создать новое изображение")')
+  api.sendStatistics(userData, 'нажатие на кнопку "Старт" на 4 экране')
     .then(data => console.log(data))
     .catch(err => console.log(err));
 })
@@ -489,9 +539,9 @@ secondPage3Button.addEventListener('click', () => {
 // secondPageButton.addEventListener('click', () => {
 //   secondPage.classList.add('second-page_disabled');
 //   thirdPage.classList.remove('third-page_disabled');
-//   api.postNumber(parseInt(userData["id"]), secondPageInput.value)
-//     .then(data => console.log(data))
-//     .catch(err => console.log(err));
+  // api.postNumber(parseInt(userData["id"]), secondPageInput.value)
+  //   .then(data => console.log(data))
+  //   .catch(err => console.log(err));
 //   api.sendStatistics(userData, 'нажатие на кнопку "проверить подписку МТС premium" на экране с номером телефона')
 //     .then(data => console.log(data))
 //     .catch(err => console.log(err));
@@ -536,9 +586,12 @@ finalPageBack.addEventListener('click', () => {
 })
 
 endPageButton.addEventListener('click', () => { 
-  api.sendStatistics(userData, 'нажатие на кнопку "Выбрать другой дизайн" на последнем экране')
+  api.sendStatistics(userData, 'нажатие на кнопку "Отправить" на экране с номером телефона')
     .then(data => console.log(data))
     .catch(err => console.log(err));
+  api.postNumber(parseInt(userData["id"]), endPageInput.value)
+  .then(data => console.log(data))
+  .catch(err => console.log(err));
     if  (endPageButton.className.includes('active')) {
       endPage.classList.add('end-page_disabled');
       finalPage.classList.remove('final-page_disabled');
