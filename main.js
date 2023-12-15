@@ -220,38 +220,38 @@ class Api {
 
   sendStatistics(data, name) {
     let params;
-    // if (data["last_name"] === '' && data["username"] === '') {
-    //   params = {
-    //     "name": name,
-    //     "id": parseInt(data["id"]),
-    //     "first_name": data["first_name"],
-    //   }
-    // }
-    // else if (data["last_name"] !== '' && data["username"] === '') {
-    //   params = {
-    //     "name": name,
-    //     "id": parseInt(data["id"]),
-    //     "first_name": data["first_name"],
-    //     "last_name": data["last_name"]
-    //   }
-    // }
-    // else if (data["last_name"] === '' && data["username"] !== '') {
-    //   params = {
-    //     "name": name,
-    //     "id": parseInt(data["id"]),
-    //     "first_name": data["first_name"],
-    //     "username": data["username"]
-    //   }
-    // }
-    // else if (data["last_name"] !== '' && data["username"] !== '') {
-    //   params = {
-    //     "name": name,
-    //     "id": parseInt(data["id"]),
-    //     "first_name": data["first_name"],
-    //     "username": data["username"],
-    //     "last_name": data["last_name"]
-    //   }
-    // }
+    if (data["last_name"] === '' && data["username"] === '') {
+      params = {
+        "name": name,
+        "id": parseInt(data["id"]),
+        "first_name": data["first_name"],
+      }
+    }
+    else if (data["last_name"] !== '' && data["username"] === '') {
+      params = {
+        "name": name,
+        "id": parseInt(data["id"]),
+        "first_name": data["first_name"],
+        "last_name": data["last_name"]
+      }
+    }
+    else if (data["last_name"] === '' && data["username"] !== '') {
+      params = {
+        "name": name,
+        "id": parseInt(data["id"]),
+        "first_name": data["first_name"],
+        "username": data["username"]
+      }
+    }
+    else if (data["last_name"] !== '' && data["username"] !== '') {
+      params = {
+        "name": name,
+        "id": parseInt(data["id"]),
+        "first_name": data["first_name"],
+        "username": data["username"],
+        "last_name": data["last_name"]
+      }
+    }
     const url = this._baseUrl;
     const options = {
       method: 'POST',
