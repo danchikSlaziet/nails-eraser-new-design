@@ -474,13 +474,13 @@ secondPage3Button.addEventListener('click', () => {
 
 
 timerInstance.addEventListener('stopped', () => {
-  fourthPage.classList.add('fourth-page_disabled');
-  if (!isAllLayersErased) {
-    finalPageLose.classList.remove('final-page-lose_disabled');
-  }
-  else {
-    endPage.classList.remove('end-page_disabled');
-  }
+  // fourthPage.classList.add('fourth-page_disabled');
+  // if (!isAllLayersErased) {
+  //   finalPageLose.classList.remove('final-page-lose_disabled');
+  // }
+  // else {
+  //   endPage.classList.remove('end-page_disabled');
+  // }
 })
 finalPageLoseButton.addEventListener('click', () => {
   finalPageLose.classList.add('final-page-lose_disabled');
