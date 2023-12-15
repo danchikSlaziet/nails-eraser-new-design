@@ -808,6 +808,9 @@ line-height: 24px; /* 109.091% */
   gap: 8px;
   margin-bottom: 30px;
 }
+.end-page__checkbox-container:hover {
+  cursor: pointer;
+}
 .end-page__checkbox {
   width: 20px;
   height: 20px;
