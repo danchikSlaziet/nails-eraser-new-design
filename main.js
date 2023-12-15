@@ -77,7 +77,7 @@ function startEraseGame() {
         fg: './images/nails-5.png',  // Foreground (image path or hex color).
         realtime: true,       // Calculates percentage in realitime.
         scratchMove: move5,
-        cursor: 'none' // Set cursor.
+        cursor: 'initial' // Set cursor.
       });
     }
   }
@@ -94,7 +94,7 @@ function startEraseGame() {
         fg: './images/nails-4.png',  // Foreground (image path or hex color).
         realtime: true,       // Calculates percentage in realitime.
         scratchMove: move4,
-        cursor: 'none' // Set cursor.
+        cursor: 'initial' // Set cursor.
       });
     }
   }
@@ -111,7 +111,7 @@ function startEraseGame() {
         fg: './images/nails-3.png',  // Foreground (image path or hex color).
         realtime: true,       // Calculates percentage in realitime.
         scratchMove: move3,
-        cursor: 'none' // Set cursor.
+        cursor: 'initial' // Set cursor.
       });
     }
   }
@@ -128,7 +128,7 @@ function startEraseGame() {
         fg: './images/nails-2.png',  // Foreground (image path or hex color).
         realtime: true,       // Calculates percentage in realitime.
         scratchMove: move2,
-        cursor: 'none' // Set cursor.
+        cursor: 'initial' // Set cursor.
       });
       
     }
@@ -140,19 +140,11 @@ function startEraseGame() {
     fg: './images/nails-1.png',  // Foreground (image path or hex color).
     realtime: true,       // Calculates percentage in realitime.
     scratchMove: move,
-    cursor: 'none' // Set cursor.
+    cursor: 'initial' // Set cursor.
   });
 }
 startEraseGame();
-const cursor = document.querySelector(".fourth-page__cursor")
-const mouseMove = function (e) { // #2
-  let x = e.clientX;
-  let y = e.clientY;
-  cursor.style.left = x + "px";
-  cursor.style.top = y + "px";
-};
 
-document.addEventListener("mousemove", mouseMove);
 
 function restartEraseGame() {
   $('#elem').wScratchPad('reset');

@@ -405,7 +405,6 @@ button:hover {
   height: 100vh;
   padding: 24px;
   background: linear-gradient(342deg, #FFD1C9 2.59%, #AEA5EA 36.2%, #8591F3 62.22%, #6980F8 86.61%);
-  cursor: none;
   /* visibility: visible;
   opacity: 1;
   transition: visibility .5s, opacity .5s ease-out; */
