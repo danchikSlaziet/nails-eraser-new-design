@@ -80,7 +80,7 @@ button:hover {
   #elem, #elem2, #elem3, #elem4, #elem5 {
     width: 231px;
     height: 241px;
-    padding-left: 19px;
+    /* padding-left: 19px; */
     margin: 124px auto 0 auto;
   }
   #hand {
