@@ -53,7 +53,7 @@ button:hover {
   /* position: absolute; */
   width: 254px;
   height: 241px;
-  padding-left: 22px;
+  /* padding-left: 22px; */
   margin: 130px auto 0 auto;
   z-index: 2;
   -moz-user-select: none;
