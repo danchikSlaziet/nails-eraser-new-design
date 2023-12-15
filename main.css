@@ -560,6 +560,7 @@ line-height: 24px; /* 109.091% */
 .final-page__button {
   margin-top: auto;
   margin-bottom: 27.86px;
+  width: 100%;
 }
 
 /* ========FINAL-PAGE-LOSE =========== */
@@ -624,6 +625,7 @@ line-height: 24px; /* 109.091% */
 .final-page-lose__button {
   margin-top: auto;
   margin-bottom: 27.86px;
+  width: 100%;
 }
 
 /* ======== END-PAGE ============== */
