@@ -261,7 +261,7 @@ button:hover {
 
 @media screen and (max-height: 690px) {
   .blur-content {
-    height: 400px;
+    height: 395px;
   }
   .blur-content__img {
     margin-top: 50px;
