@@ -58,7 +58,8 @@ let isAllLayersErased = false;
 
 function startEraseGame() {
   function move5(e, percent) {
-    if (percent.toFixed(2) >= 99.9)  {
+    console.log(percent.toFixed(3))
+    if (percent >= 99.8)  {
       console.log('стёрты все слои');
       this.clear();
       isAllLayersErased = true;
@@ -68,7 +69,7 @@ function startEraseGame() {
     }
   }
   function move4(e, percent) {
-    if (percent.toFixed(2) >= 99.9)  {
+    if (percent > 99.8)  {
       console.log('end')
       this.clear();
       this.enable = false;
@@ -85,7 +86,7 @@ function startEraseGame() {
     }
   }
   function move3(e, percent) {
-    if (percent.toFixed(2) >= 99.9)  {
+    if (percent > 99.8)  {
       console.log('end')
       this.clear();
       this.enable = false;
@@ -102,7 +103,7 @@ function startEraseGame() {
     }
   }
   function move2(e, percent) {
-    if (percent.toFixed(2) >= 99.9)  {
+    if (percent > 99.8)  {
       console.log('end')
       this.clear();
       this.enable = false;
@@ -119,7 +120,8 @@ function startEraseGame() {
     }
   }
   function move(e, percent) {
-    if (percent.toFixed(2) >= 99.9) {
+    console.log(percent)
+    if (percent > 99.8) {
       console.log('end');
       this.clear();
       this.enable = false;
