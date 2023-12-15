@@ -32,7 +32,10 @@ const endPageButton = endPage.querySelector('.end-page__button');
 const endPageInput = endPage.querySelector('.end-page__input');
 const endPageLabel = endPage.querySelector('.end-page__label');
 const endPageText = endPage.querySelector('.end-page__text');
-const endPageTopText = endPage.querySelector('.end-page__top-text')
+const endPageTopText = endPage.querySelector('.end-page__top-text');
+const endPageCheckContainer = endPage.querySelector('.end-page__checkbox-container');
+const endPageCheckbox = endPage.querySelector('.end-page__checkbox');
+const endPageArrow = endPageCheckbox.querySelector('.end-page__checkbox-arrow');
 
 const finalPageLose = document.querySelector('.final-page-lose');
 const finalPageLoseButton = finalPageLose.querySelector('.final-page-lose__button');
@@ -55,7 +58,7 @@ let isAllLayersErased = false;
 
 function startEraseGame() {
   function move5(e, percent) {
-    if (percent.toFixed(1) >= 99.2)  {
+    if (percent >= 99.9)  {
       console.log('стёрты все слои');
       this.clear();
       isAllLayersErased = true;
@@ -65,7 +68,7 @@ function startEraseGame() {
     }
   }
   function move4(e, percent) {
-    if (percent.toFixed(1) >= 99.2)  {
+    if (percent >= 99.9)  {
       console.log('end')
       this.clear();
       this.enable = false;
@@ -82,7 +85,7 @@ function startEraseGame() {
     }
   }
   function move3(e, percent) {
-    if (percent.toFixed(1) >= 99.2)  {
+    if (percent >= 99.9)  {
       console.log('end')
       this.clear();
       this.enable = false;
@@ -99,7 +102,7 @@ function startEraseGame() {
     }
   }
   function move2(e, percent) {
-    if (percent.toFixed(1) >= 99.2)  {
+    if (percent >= 99.9)  {
       console.log('end')
       this.clear();
       this.enable = false;
@@ -116,7 +119,7 @@ function startEraseGame() {
     }
   }
   function move(e, percent) {
-    if (percent.toFixed(1) >= 99.2) {
+    if (percent >= 99.9) {
       console.log('end');
       this.clear();
       this.enable = false;
@@ -365,10 +368,10 @@ const phoneMask = new IMask(endPageInput, {
 });
 
 function phoneInputHandler() {
-  if (phoneMask.masked.isComplete) {
-    endPageButton.disabled = false;
+  if (phoneMask.masked.isComplete && endPageArrow.className.includes('active')) {
+    endPageButton.classList.add('end-page__button_active');
   } else {
-    endPageButton.disabled = true;
+    endPageButton.classList.remove('end-page__button_active');
   }
 }
 
@@ -399,6 +402,16 @@ endPageInput.addEventListener('blur', () => {
     window.scrollTo({top: 0, behavior: "smooth"});
   }
 });
+
+endPageCheckContainer.addEventListener('click', () => {
+  endPageArrow.classList.toggle('end-page__checkbox-arrow_active');
+  if (endPageArrow.className.includes('active') && phoneMask.masked.isComplete) {
+    endPageButton.classList.add('end-page__button_active');
+  }
+  else {
+    endPageButton.classList.remove('end-page__button_active');
+  }
+})
 
 
 firstPageButton.addEventListener('click', () => {
@@ -501,10 +514,12 @@ finalPageBack.addEventListener('click', () => {
   finalPage.classList.add('final-page_disabled');
 })
 
-endPageButton.addEventListener('click', () => {
+endPageButton.addEventListener('click', () => { 
   api.sendStatistics(userData, 'нажатие на кнопку "Выбрать другой дизайн" на последнем экране')
     .then(data => console.log(data))
     .catch(err => console.log(err));
-  endPage.classList.add('end-page_disabled');
-  finalPage.classList.remove('final-page_disabled');
+    if  (endPageButton.className.includes('active')) {
+      endPage.classList.add('end-page_disabled');
+      finalPage.classList.remove('final-page_disabled');
+    }
 })
